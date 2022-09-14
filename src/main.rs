@@ -178,7 +178,7 @@ fn main() {
             .help("Customize the user-agent string sent to the Healthchecks.io server"))
         .arg(Arg::with_name("base_url")
             .long("base_url")
-            .default_value("https://hc-ping.com")
+            .default_value("https://check.ingolonde.pw/ping")
             .help("Base URL of the Healthchecks.io server to ping"))
         .arg(Arg::with_name("command")
             .required(true)
