@@ -168,7 +168,7 @@ struct Cli {
     user_agent: Option<String>,
 
     /// Base URL of the Healthchecks.io server to ping
-    #[clap(long, env="HEALTHCHECKS_BASE_URL", default_value="https://check.ingolonde.pw")]
+    #[clap(long, env="HEALTHCHECKS_BASE_URL", default_value="https://check.ingolonde.pw/ping")]
     base_url: String,
 
     /// The command to run
