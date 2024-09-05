@@ -102,7 +102,7 @@ impl HCAgent {
         if self.verbose { eprintln!("Sending request: {:?}", req); }
         req.call()
     }
-
+    fn notify_start(&self) -> Result<Response, Box<ureq::Error>> {
     /// Pings the Healthchecks server to notify that the task denoted by the URL prefix is done.
     /// If code is non-zero, the task will be considered failed. If code is None the task will be logged
     /// but not update the check.
@@ -192,7 +192,7 @@ impl Cli {
 }
 
 fn run(cli: Cli, agent: HCAgent) -> Result<Response, Error> {
-    if cli.time {
+fn run(cli: Cli, agent: HCAgent) -> Result<Response, Box<ureq::Error>> {
         if let Err(e) = agent.notify_start() {
             eprintln!("Failed to send start request: {:?}", e);
         }
